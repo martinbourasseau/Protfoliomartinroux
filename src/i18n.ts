@@ -1,0 +1,375 @@
+/**
+ * Système de traduction : un dictionnaire typé par langue.
+ * `fr` sert de référence ; TypeScript refuse toute clé manquante dans `en`.
+ */
+export type Lang = 'fr' | 'en';
+
+const fr = {
+  // navigation
+  'nav.home': 'Accueil',
+  'nav.about': 'À propos',
+  'nav.projects': 'Projets',
+  'nav.playlists': 'Playlists',
+  'nav.no-line': 'No Line',
+  'nav.events': 'Événements',
+  'nav.contact': 'Contact',
+  'nav.menu': 'Menu',
+  'nav.close': 'Fermer',
+  'nav.main': 'Navigation principale',
+  'nav.lang': 'Langue du site',
+  'nav.skip': 'Aller au contenu',
+  'hud.channel': 'Canal',
+  'stage.hint': 'Glissez pour faire tourner',
+  'ext': 'nouvel onglet',
+
+  // méta
+  'meta.home.title': 'Martin Roux, développement d’artistes et stratégie musicale',
+  'meta.home.desc': 'Portfolio de Martin Roux, professionnel de l’industrie musicale à Paris : développement d’artistes, stratégie de sortie, placements en playlists et label No Line.',
+  'meta.about.title': 'À propos de Martin Roux',
+  'meta.about.desc': 'Le parcours et la méthode de Martin Roux : repérer des artistes, structurer leurs sorties, les faire entendre.',
+  'meta.projects.title': 'Projets accompagnés par Martin Roux',
+  'meta.projects.desc': 'Les projets musicaux accompagnés : Big D, « Le droit des larmes », et Issho, « ON S’VOIT PAS GRANDIR ».',
+  'meta.playlists.title': 'Placements en playlists, Martin Roux',
+  'meta.playlists.desc': 'Plus de 50 placements en playlists en moyenne, sur Apple Music, Spotify et Deezer.',
+  'meta.no-line.title': 'No Line, le label rap fondé par Martin Roux',
+  'meta.no-line.desc': 'No Line, marque de distribution rap du groupe Wiseband, fondée et dirigée par Martin Roux.',
+  'meta.events.title': 'Événements professionnels, Martin Roux',
+  'meta.events.desc': 'Événements organisés et rendez-vous professionnels de Martin Roux dans l’industrie musicale.',
+  'meta.contact.title': 'Contacter Martin Roux',
+  'meta.contact.desc': 'Écrire ou téléphoner à Martin Roux pour un projet musical, un artiste ou une collaboration.',
+
+  // accueil
+  'home.role1': 'Développement d’artistes',
+  'home.role2': 'Industrie musicale',
+  'home.role3': 'Stratégie créative',
+  'home.tagline': 'Du bruit au signal.',
+  'home.lede': 'Je repère des artistes, je structure leurs sorties et je les amène là où on les écoute.',
+  'home.place': 'Paris, France',
+  'home.cta.projects': 'Voir les projets',
+  'home.cta.contact': 'Me contacter',
+  'home.ticker': 'Placements en playlists',
+  'home.stats.title': 'En bref',
+  'home.stats.big': 'placements en playlists en moyenne',
+  'home.stats.a.t': 'Plusieurs projets musicaux accompagnés',
+  'home.stats.a.d': 'De la préparation du premier single jusqu’à la sortie du projet.',
+  'home.stats.b.t': 'Développement de projets et d’artistes',
+  'home.stats.b.d': 'Direction artistique, stratégie de sortie, communication et visibilité.',
+  'home.stats.c.t': 'Création et développement de No Line',
+  'home.stats.c.d': 'Le label rap du groupe Wiseband, lancé en décembre 2025.',
+  'home.projects.title': 'Dernières sorties accompagnées',
+  'home.projects.all': 'Tous les projets',
+  'home.noline.title': 'No Line, pour les artistes qui refusent les limites.',
+  'home.noline.text': 'J’ai créé No Line pour distribuer et accompagner une scène rap qui sort des formats.',
+  'home.noline.cta': 'Découvrir No Line',
+  'home.end.title': 'Un projet à faire entendre ?',
+  'home.end.cta': 'Parlons-en',
+
+  // à propos
+  'about.title': 'À propos',
+  'about.intro': 'Fondateur de No Line, je travaille entre direction artistique, stratégie de communication et développement d’artistes.',
+  'about.p1': 'Chez Wiseband, j’ai appris à mettre un projet en avant : pitcher les playlists éditoriales, créer les contenus, gérer une sortie et accompagner l’artiste à chaque étape.',
+  'about.p2': 'Avec No Line, je développe mes propres projets. Je structure les idées, je coordonne les équipes et je construis des stratégies cohérentes. Mon objectif reste le même : allier une vision artistique à un impact concret, et aider chaque artiste à trouver sa place.',
+  'about.photo.alt': 'Martin Roux, lunettes aux verres orange et veste en jean, devant une vue de Paris.',
+  'about.photo.cap': 'Paris',
+  'about.frame1.alt': 'Détail : les lunettes aux verres orange.',
+  'about.frame2.alt': 'Détail : la veste en jean.',
+  'about.frame3.alt': 'Détail : les toits de Paris à l’arrière-plan.',
+  'about.method.title': 'Ma méthode',
+  'about.m1.t': 'Repérer',
+  'about.m1.d': 'Une veille constante de la scène émergente. Je cherche des artistes qui ont déjà un univers, pas un format à remplir.',
+  'about.m2.t': 'Structurer',
+  'about.m2.d': 'Un calendrier de sortie, une direction artistique, un dossier de presse. Chaque projet reçoit un plan pensé pour lui.',
+  'about.m3.t': 'Faire entendre',
+  'about.m3.d': 'Pitch auprès des playlists Apple Music, Spotify et Deezer, contenus pour les réseaux, démarchage des médias.',
+  'about.journey.title': 'Parcours',
+  'about.journey.note': 'Du plus ancien au plus récent.',
+  'about.skills.title': 'Compétences',
+  'about.school.title': 'Formation',
+  'about.school.text': 'Bachelor Communication événementielle, IPAC Angers.',
+  'about.cta': 'Voir les projets accompagnés',
+
+  // projets
+  'projects.title': 'Projets accompagnés',
+  'projects.intro': 'Deux sorties récentes. La liste s’allonge à chaque nouveau projet.',
+  'projects.index': 'Aller à un projet',
+  'projects.format': 'Format',
+  'projects.tracks': 'titres',
+  'projects.released': 'Sortie',
+  'projects.platform': 'Écoute',
+  'projects.origin': 'Origine',
+  'projects.role': 'Mon rôle',
+  'projects.listen': 'Écouter sur Spotify',
+  'projects.cover.alt': 'Pochette officielle de',
+  'projects.cover.note': 'Visuel typographique. La pochette officielle est sur Spotify.',
+  'projects.prev': 'Projet précédent',
+  'projects.next': 'Projet suivant',
+  'projects.end': 'Un projet à ajouter à cette liste ?',
+
+  // playlists
+  'playlists.title': 'Placements en playlists',
+  'playlists.claim': 'Plus de 50 placements en playlists en moyenne.',
+  'playlists.intro': 'Le pitch éditorial fait partie de chaque sortie. Voici sept playlists où des titres ont été placés.',
+  'playlists.filter': 'Filtrer par plateforme',
+  'playlists.all': 'Toutes',
+  'playlists.open': 'Ouvrir sur',
+  'playlists.count.one': 'playlist',
+  'playlists.count.many': 'playlists',
+  'playlists.note': 'Les visuels typographiques remplacent les pochettes quand la plateforme ne les met pas à disposition. Chaque tuile ouvre la vraie playlist.',
+
+  // no line
+  'noline.title': 'No Line',
+  'noline.kicker': 'Label rap, groupe Wiseband',
+  'noline.intro': 'No Line distribue et accompagne des artistes rap qui refusent les formats imposés.',
+  'noline.p1': 'Le label part d’une conviction : la scène rap regorge de talents qui ne rentrent dans aucune case. Plutôt que de lisser leur identité, No Line en fait sa signature. Chaque artiste garde sa direction artistique, son univers visuel et sa liberté d’écriture.',
+  'noline.p2': 'No Line s’appuie sur l’infrastructure de Wiseband, distributeur indépendant français. Le roster reste volontairement resserré, pour suivre chaque artiste de près et penser chaque sortie une par une.',
+  'noline.role.title': 'Mon rôle',
+  'noline.role.text': 'J’ai créé No Line en décembre 2025 et j’en suis le responsable. Je repère les artistes, je développe leurs projets et je pilote la playlist « Dans le viseur », présente sur Spotify, Apple Music et Deezer.',
+  'noline.services.title': 'Ce que fait le label',
+  'noline.s1': 'Distribution digitale sur les plateformes de streaming',
+  'noline.s2': 'Accompagnement éditorial et playlisting',
+  'noline.s3': 'Structuration des sorties',
+  'noline.s4': 'Développement d’artistes, du premier single au projet complet',
+  'noline.roster.title': 'Les artistes',
+  'noline.visit': 'Visiter No Line',
+  'noline.visit.note': 'no-line.fr est le site officiel du label. C’est un site distinct de ce portfolio.',
+
+  // événements
+  'events.title': 'Événements',
+  'events.intro': 'Les rendez-vous professionnels, classés selon mon rôle réel.',
+  'events.legend': 'Légende',
+  'events.status.organised': 'Organisé',
+  'events.status.attended': 'Participation',
+  'events.status.announced': 'Annoncé au programme',
+  'events.status.organised.d': 'J’ai organisé tout ou partie de l’événement.',
+  'events.status.attended.d': 'J’y ai pris part.',
+  'events.status.announced.d': 'Mon nom figure au programme officiel.',
+  'events.date': 'Date',
+  'events.place': 'Lieu',
+  'events.role': 'Rôle',
+  'events.source': 'Source',
+  'events.more': 'Cette page s’enrichit à chaque nouveau rendez-vous.',
+
+  // contact
+  'contact.title': 'Faisons bouger les lignes.',
+  'contact.intro': 'Artiste, label, média ou partenaire : écrivez-moi, je réponds.',
+  'contact.email': 'E-mail',
+  'contact.phone': 'Téléphone',
+  'contact.linkedin': 'LinkedIn',
+  'contact.linkedin.cta': 'Voir le profil',
+  'contact.noline': 'No Line',
+  'contact.copy': 'Copier',
+  'contact.copied': 'Copié',
+  'contact.form.title': 'Préparer un message',
+  'contact.form.name': 'Nom',
+  'contact.form.email': 'E-mail',
+  'contact.form.subject': 'Sujet',
+  'contact.form.message': 'Message',
+  'contact.form.submit': 'Ouvrir dans ma messagerie',
+  'contact.form.note': 'Ce formulaire ouvre votre application de messagerie avec le message prêt à partir. Rien n’est envoyé depuis ce site.',
+  'contact.form.error': 'Renseignez votre nom et votre message pour préparer l’e-mail.',
+  'contact.place': 'Basé à Paris, France',
+
+  // pied de page
+  'footer.rights': 'Martin Roux',
+  'footer.indep': 'Portfolio personnel, distinct du site no-line.fr.',
+  'footer.top': 'Haut de page',
+};
+
+export type Key = keyof typeof fr;
+
+const en: Record<Key, string> = {
+  'nav.home': 'Home',
+  'nav.about': 'About',
+  'nav.projects': 'Projects',
+  'nav.playlists': 'Playlists',
+  'nav.no-line': 'No Line',
+  'nav.events': 'Events',
+  'nav.contact': 'Contact',
+  'nav.menu': 'Menu',
+  'nav.close': 'Close',
+  'nav.main': 'Main navigation',
+  'nav.lang': 'Site language',
+  'nav.skip': 'Skip to content',
+  'hud.channel': 'Channel',
+  'stage.hint': 'Drag to rotate',
+  'ext': 'new tab',
+
+  'meta.home.title': 'Martin Roux, artist development and music strategy',
+  'meta.home.desc': 'Portfolio of Martin Roux, a music industry professional based in Paris: artist development, release strategy, playlist placements and the No Line label.',
+  'meta.about.title': 'About Martin Roux',
+  'meta.about.desc': 'Martin Roux’s background and method: scout artists, structure their releases, get them heard.',
+  'meta.projects.title': 'Projects supported by Martin Roux',
+  'meta.projects.desc': 'Music projects supported: Big D, “Le droit des larmes”, and Issho, “ON S’VOIT PAS GRANDIR”.',
+  'meta.playlists.title': 'Playlist placements, Martin Roux',
+  'meta.playlists.desc': 'More than 50 playlist placements on average, across Apple Music, Spotify and Deezer.',
+  'meta.no-line.title': 'No Line, the rap label founded by Martin Roux',
+  'meta.no-line.desc': 'No Line, the rap distribution brand of the Wiseband group, founded and run by Martin Roux.',
+  'meta.events.title': 'Professional events, Martin Roux',
+  'meta.events.desc': 'Events organised and professional appearances by Martin Roux in the music industry.',
+  'meta.contact.title': 'Contact Martin Roux',
+  'meta.contact.desc': 'Write to or call Martin Roux about a music project, an artist or a collaboration.',
+
+  'home.role1': 'Artist development',
+  'home.role2': 'Music industry',
+  'home.role3': 'Creative strategy',
+  'home.tagline': 'From noise to signal.',
+  'home.lede': 'I scout artists, structure their releases and take them where people listen.',
+  'home.place': 'Paris, France',
+  'home.cta.projects': 'See the projects',
+  'home.cta.contact': 'Get in touch',
+  'home.ticker': 'Playlist placements',
+  'home.stats.title': 'In short',
+  'home.stats.big': 'playlist placements on average',
+  'home.stats.a.t': 'Several music projects supported',
+  'home.stats.a.d': 'From preparing the first single to releasing the full project.',
+  'home.stats.b.t': 'Project and artist development',
+  'home.stats.b.d': 'Art direction, release strategy, communication and visibility.',
+  'home.stats.c.t': 'Creation and development of No Line',
+  'home.stats.c.d': 'The rap label of the Wiseband group, launched in December 2025.',
+  'home.projects.title': 'Latest releases supported',
+  'home.projects.all': 'All projects',
+  'home.noline.title': 'No Line, for artists who refuse limits.',
+  'home.noline.text': 'I created No Line to distribute and support a rap scene that breaks out of formats.',
+  'home.noline.cta': 'Discover No Line',
+  'home.end.title': 'A project that needs to be heard?',
+  'home.end.cta': 'Let’s talk',
+
+  'about.title': 'About',
+  'about.intro': 'Founder of No Line, I work across art direction, communication strategy and artist development.',
+  'about.p1': 'At Wiseband, I learned how to put a project forward: pitching editorial playlists, creating content, running a release and supporting the artist at every step.',
+  'about.p2': 'With No Line, I develop my own projects. I shape ideas, coordinate teams and build coherent strategies. The goal stays the same: pair an artistic vision with concrete impact, and help each artist find their place.',
+  'about.photo.alt': 'Martin Roux, wearing orange-lens sunglasses and a denim jacket, in front of a view of Paris.',
+  'about.photo.cap': 'Paris',
+  'about.frame1.alt': 'Detail: the orange-lens sunglasses.',
+  'about.frame2.alt': 'Detail: the denim jacket.',
+  'about.frame3.alt': 'Detail: the rooftops of Paris in the background.',
+  'about.method.title': 'My method',
+  'about.m1.t': 'Scout',
+  'about.m1.d': 'A constant watch on the emerging scene. I look for artists who already have a world of their own, not a format to fill.',
+  'about.m2.t': 'Structure',
+  'about.m2.d': 'A release calendar, an art direction, a press kit. Each project gets a plan built for it.',
+  'about.m3.t': 'Get heard',
+  'about.m3.d': 'Pitching to Apple Music, Spotify and Deezer playlists, content for social media, outreach to the press.',
+  'about.journey.title': 'Background',
+  'about.journey.note': 'From oldest to most recent.',
+  'about.skills.title': 'Skills',
+  'about.school.title': 'Education',
+  'about.school.text': 'Bachelor in Event Communication, IPAC Angers.',
+  'about.cta': 'See the projects supported',
+
+  'projects.title': 'Projects supported',
+  'projects.intro': 'Two recent releases. The list grows with each new project.',
+  'projects.index': 'Jump to a project',
+  'projects.format': 'Format',
+  'projects.tracks': 'tracks',
+  'projects.released': 'Released',
+  'projects.platform': 'Listen',
+  'projects.origin': 'From',
+  'projects.role': 'My role',
+  'projects.listen': 'Listen on Spotify',
+  'projects.cover.alt': 'Official cover of',
+  'projects.cover.note': 'Typographic visual. The official cover is on Spotify.',
+  'projects.prev': 'Previous project',
+  'projects.next': 'Next project',
+  'projects.end': 'A project to add to this list?',
+
+  'playlists.title': 'Playlist placements',
+  'playlists.claim': 'More than 50 playlist placements on average.',
+  'playlists.intro': 'Editorial pitching is part of every release. Here are seven playlists where tracks were placed.',
+  'playlists.filter': 'Filter by platform',
+  'playlists.all': 'All',
+  'playlists.open': 'Open on',
+  'playlists.count.one': 'playlist',
+  'playlists.count.many': 'playlists',
+  'playlists.note': 'Typographic visuals stand in for covers when the platform does not make them available. Each tile opens the real playlist.',
+
+  'noline.title': 'No Line',
+  'noline.kicker': 'Rap label, Wiseband group',
+  'noline.intro': 'No Line distributes and supports rap artists who refuse imposed formats.',
+  'noline.p1': 'The label starts from one belief: the rap scene is full of talent that fits no box. Instead of smoothing out their identity, No Line makes it its signature. Each artist keeps their art direction, their visual world and their freedom to write.',
+  'noline.p2': 'No Line relies on the infrastructure of Wiseband, an independent French distributor. The roster is kept deliberately small, to follow each artist closely and plan each release one by one.',
+  'noline.role.title': 'My role',
+  'noline.role.text': 'I created No Line in December 2025 and I run it. I scout the artists, develop their projects and steer the “Dans le viseur” playlist, available on Spotify, Apple Music and Deezer.',
+  'noline.services.title': 'What the label does',
+  'noline.s1': 'Digital distribution to streaming platforms',
+  'noline.s2': 'Editorial support and playlisting',
+  'noline.s3': 'Release structuring',
+  'noline.s4': 'Artist development, from the first single to the full project',
+  'noline.roster.title': 'The artists',
+  'noline.visit': 'Visit No Line',
+  'noline.visit.note': 'no-line.fr is the label’s official website. It is a separate site from this portfolio.',
+
+  'events.title': 'Events',
+  'events.intro': 'Professional events, sorted by the part I actually played.',
+  'events.legend': 'Key',
+  'events.status.organised': 'Organised',
+  'events.status.attended': 'Attended',
+  'events.status.announced': 'Announced on the programme',
+  'events.status.organised.d': 'I organised all or part of the event.',
+  'events.status.attended.d': 'I took part.',
+  'events.status.announced.d': 'My name appears on the official programme.',
+  'events.date': 'Date',
+  'events.place': 'Place',
+  'events.role': 'Role',
+  'events.source': 'Source',
+  'events.more': 'This page grows with each new event.',
+
+  'contact.title': 'Let’s make things move.',
+  'contact.intro': 'Artist, label, media or partner: write to me, I reply.',
+  'contact.email': 'Email',
+  'contact.phone': 'Phone',
+  'contact.linkedin': 'LinkedIn',
+  'contact.linkedin.cta': 'View profile',
+  'contact.noline': 'No Line',
+  'contact.copy': 'Copy',
+  'contact.copied': 'Copied',
+  'contact.form.title': 'Prepare a message',
+  'contact.form.name': 'Name',
+  'contact.form.email': 'Email',
+  'contact.form.subject': 'Subject',
+  'contact.form.message': 'Message',
+  'contact.form.submit': 'Open in my mail app',
+  'contact.form.note': 'This form opens your mail app with the message ready to send. Nothing is sent from this site.',
+  'contact.form.error': 'Enter your name and your message to prepare the email.',
+  'contact.place': 'Based in Paris, France',
+
+  'footer.rights': 'Martin Roux',
+  'footer.indep': 'Personal portfolio, separate from the no-line.fr website.',
+  'footer.top': 'Back to top',
+};
+
+const dict: Record<Lang, Record<Key, string>> = { fr, en };
+
+let current: Lang = 'fr';
+
+export function detectLang(): Lang {
+  try {
+    const saved = localStorage.getItem('mr-lang');
+    if (saved === 'fr' || saved === 'en') return saved;
+  } catch {
+    /* stockage indisponible : on continue sans */
+  }
+  return navigator.language?.toLowerCase().startsWith('fr') ? 'fr' : 'en';
+}
+
+export function setLang(lang: Lang): void {
+  current = lang;
+  try {
+    localStorage.setItem('mr-lang', lang);
+  } catch {
+    /* idem */
+  }
+}
+
+export const getLang = (): Lang => current;
+export const t = (key: Key): string => dict[current][key];
+/** Traduit un champ bilingue des données. */
+export const l = (value: Record<Lang, string>): string => value[current];
+
+export function formatDate(iso: string): string {
+  return new Intl.DateTimeFormat(current === 'fr' ? 'fr-FR' : 'en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }).format(new Date(iso + 'T12:00:00'));
+}

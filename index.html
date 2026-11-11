@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr" data-route="home">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Martin Roux, développement d’artistes et stratégie musicale</title>
+    <meta name="description" content="Portfolio de Martin Roux, professionnel de l’industrie musicale à Paris : développement d’artistes, stratégie de sortie, placements en playlists et label No Line." />
+    <meta name="theme-color" content="#03040a" />
+    <meta name="color-scheme" content="dark" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Martin Roux" />
+    <meta property="og:title" content="Martin Roux, développement d’artistes et stratégie musicale" />
+    <meta property="og:description" content="Portfolio de Martin Roux, professionnel de l’industrie musicale à Paris." />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:locale:alternate" content="en_GB" />
+    <!-- Remplacer par l'adresse absolue de l'image une fois le domaine choisi. -->
+    <meta property="og:image" content="img/og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2303040a'/%3E%3Crect x='5' y='15' width='14' height='2' fill='%23ece8dd'/%3E%3Crect x='21' y='11' width='2' height='2' fill='%23ff7a1f'/%3E%3Crect x='25' y='19' width='2' height='2' fill='%231a2fff'/%3E%3C/svg%3E" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Martin Roux",
+        "jobTitle": "Responsable du label No Line",
+        "description": "Professionnel de l'industrie musicale : développement d'artistes, stratégie de sortie, placements en playlists.",
+        "address": { "@type": "PostalAddress", "addressLocality": "Paris", "addressCountry": "FR" },
+        "email": "mailto:martin@wiseband.com",
+        "telephone": "+33610338096",
+        "knowsLanguage": ["fr", "en"],
+        "worksFor": { "@type": "Organization", "name": "No Line", "url": "https://www.no-line.fr" },
+        "sameAs": ["https://www.linkedin.com/in/martin-roux-b25697330/", "https://www.no-line.fr"]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#view" id="skip"></a>
+    <canvas id="gl" aria-hidden="true"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="bar" id="bar">
+      <a class="brand" href="#home" aria-label="Martin Roux">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__name">Martin Roux</span>
+      </a>
+      <nav class="nav" id="nav"></nav>
+      <div class="bar__end">
+        <div class="lang" role="group" id="lang">
+          <button type="button" data-lang="fr" lang="fr">FR</button>
+          <button type="button" data-lang="en" lang="en">EN</button>
+        </div>
+        <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="menu"><span class="burger__label"></span><span class="burger__ico" aria-hidden="true"></span></button>
+      </div>
+    </header>
+
+    <div class="menu" id="menu" hidden>
+      <nav class="menu__nav" id="menu-nav"></nav>
+      <p class="menu__foot mono">Paris, France, 48.8566 N, 2.3522 E</p>
+    </div>
+
+    <main id="view" tabindex="-1">
+      <noscript>
+        <div style="padding:6rem 1.5rem;max-width:40rem">
+          <h1>Martin Roux</h1>
+          <p>Développement d’artistes, industrie musicale, stratégie créative. Paris, France.</p>
+          <p>martin@wiseband.com · +33 6 10 33 80 96 · <a href="https://www.no-line.fr">no-line.fr</a></p>
+        </div>
+      </noscript>
+    </main>
+
+    <footer class="foot" id="foot"></footer>
+    <div class="hud" id="hud" aria-hidden="true"></div>
+    <div class="beam" id="beam" aria-hidden="true"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
