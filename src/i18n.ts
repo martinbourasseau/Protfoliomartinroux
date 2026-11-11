@@ -98,6 +98,9 @@ const fr = {
   'projects.platform': 'Écoute',
   'projects.origin': 'Origine',
   'projects.role': 'Mon rôle',
+  'projects.streams': 'Écoutes',
+  'projects.did': 'Qu’est-ce que j’ai fait\u00a0?',
+  'projects.did.lead': 'De bout en bout, du repérage à la campagne :',
   'projects.listen': 'Écouter sur Spotify',
   'projects.cover.alt': 'Pochette officielle de',
   'projects.cover.note': 'Visuel typographique. La pochette officielle est sur Spotify.',
@@ -173,6 +176,7 @@ const fr = {
   'footer.rights': 'Martin Roux',
   'footer.indep': 'Portfolio personnel, distinct du site no-line.fr.',
   'footer.top': 'Haut de page',
+  'footer.credit': 'Portfolio créé par Martin Bourasseau',
 };
 
 export type Key = keyof typeof fr;
@@ -266,6 +270,9 @@ const en: Record<Key, string> = {
   'projects.platform': 'Listen',
   'projects.origin': 'From',
   'projects.role': 'My role',
+  'projects.streams': 'Streams',
+  'projects.did': 'What did I do?',
+  'projects.did.lead': 'End to end, from scouting to the campaign:',
   'projects.listen': 'Listen on Spotify',
   'projects.cover.alt': 'Official cover of',
   'projects.cover.note': 'Typographic visual. The official cover is on Spotify.',
@@ -336,6 +343,7 @@ const en: Record<Key, string> = {
   'footer.rights': 'Martin Roux',
   'footer.indep': 'Personal portfolio, separate from the no-line.fr website.',
   'footer.top': 'Back to top',
+  'footer.credit': 'Portfolio created by Martin Bourasseau',
 };
 
 const dict: Record<Lang, Record<Key, string>> = { fr, en };

@@ -8,7 +8,7 @@ import './styles/main.css';
 import { detectLang, getLang, setLang, t, type Key, type Lang } from './i18n';
 import { looks, parseRoute, routeIds, type RouteId } from './routes';
 import { contact as contactData } from './data';
-import { arrow, ext, type Page } from './ui';
+import { arrow, ext, extHint, type Page } from './ui';
 import { initTilt } from './fx/tilt';
 import { initStretch } from './fx/type';
 import type { SignalScene } from './gl/scene';
@@ -79,6 +79,7 @@ function renderChrome(): void {
         <li><a ${ext(contactData.noLine)}>No Line ${arrow('out')}</a></li>
       </ul>
       <p class="foot__note mono">© ${new Date().getFullYear()} ${t('footer.rights')}. ${t('footer.indep')}</p>
+      <p class="foot__credit mono">${t('footer.credit')}, <a ${ext('https://groupebourasseau.com')}>groupebourasseau.com ${arrow('out')}${extHint()}</a></p>
       <button type="button" class="foot__top mono" id="to-top">${t('footer.top')} ${arrow('up')}</button>
     </div>`;
 }

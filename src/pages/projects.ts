@@ -29,9 +29,17 @@ export const projects: Page = {
               <div><dt>${t('projects.format')}</dt><dd>${l(p.format)}, ${p.tracks} ${t('projects.tracks')}</dd></div>
               <div><dt>${t('projects.released')}</dt><dd>${formatDate(p.released)}</dd></div>
               <div><dt>${t('projects.platform')}</dt><dd>${p.platform}</dd></div>
+              ${p.streams ? `<div><dt>${t('projects.streams')}</dt><dd>${l(p.streams)}</dd></div>` : ''}
               ${p.origin ? `<div><dt>${t('projects.origin')}</dt><dd>${l(p.origin)}</dd></div>` : ''}
               ${p.role ? `<div class="specs__wide"><dt>${t('projects.role')}</dt><dd>${l(p.role)}</dd></div>` : ''}
             </dl>
+            ${p.did ? `<div class="did">
+              <button type="button" class="did__btn" aria-expanded="false" aria-controls="did-${p.id}">${t('projects.did')}</button>
+              <div class="did__panel" id="did-${p.id}" role="region" aria-label="${t('projects.did')}">
+                <p class="did__lead mono">${t('projects.did.lead')}</p>
+                <ol class="did__steps">${p.did.map((s) => `<li>${l(s)}</li>`).join('')}</ol>
+              </div>
+            </div>` : ''}
             <p class="cover-note mono">${t('projects.cover.note')}</p>
             <div class="project__actions">
               <a class="btn btn--solid" ${ext(p.url)}>${t('projects.listen')} ${arrow('out')}${extHint()}</a>
@@ -52,6 +60,14 @@ export const projects: Page = {
   mount(root) {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const onClick = (e: Event): void => {
+      const did = (e.target as HTMLElement).closest<HTMLElement>('.did__btn');
+      if (did) {
+        // Au toucher (pas de survol), le bouton ouvre et ferme le détail.
+        const open = did.getAttribute('aria-expanded') !== 'true';
+        did.setAttribute('aria-expanded', String(open));
+        did.parentElement?.classList.toggle('is-open', open);
+        return;
+      }
       const btn = (e.target as HTMLElement).closest<HTMLElement>('[data-goto]');
       if (!btn) return;
       const target = root.querySelector<HTMLElement>(`#p-${btn.dataset.goto}`);

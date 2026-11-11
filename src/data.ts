@@ -33,6 +33,10 @@ export interface Project {
   /** Renseigné uniquement quand le rôle est documenté. */
   role?: L10n;
   origin?: L10n;
+  /** Écoutes cumulées, communiquées par Martin Roux. */
+  streams?: L10n;
+  /** Étapes prises en charge, révélées par le bouton « Qu’est-ce que j’ai fait ? ». */
+  did?: L10n[];
 }
 
 export const projects: Project[] = [
@@ -53,6 +57,13 @@ export const projects: Project[] = [
       fr: 'Un EP de huit titres, sorti le 18 septembre 2026 et disponible sur Spotify.',
       en: 'An eight-track EP, released on 18 September 2026 and available on Spotify.',
     },
+    streams: { fr: 'Plus de 200\u202f000', en: 'Over 200,000' },
+    did: [
+      { fr: 'Repérage de l’artiste', en: 'Artist scouting' },
+      { fr: 'Production', en: 'Production' },
+      { fr: 'Distribution', en: 'Distribution' },
+      { fr: 'Campagne sur les réseaux sociaux', en: 'Social media campaign' },
+    ],
   },
   {
     id: 'issho',
